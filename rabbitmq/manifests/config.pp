@@ -81,6 +81,17 @@ class rabbitmq::config {
   }
 
 
+  if $::osfamily == 'Debian' {
+    file { '/etc/default/rabbitmq-server':
+      ensure  => file,
+      content => template('rabbitmq/default.erb'),
+      mode    => '0644',
+      owner   => '0',
+      group   => '0',
+      notify  => Class['rabbitmq::service'],
+    }
+  }
+
   if $config_cluster {
 
     file { 'erlang_cookie':
@@ -112,6 +123,4 @@ class rabbitmq::config {
     }
 
   }
-
-
 }
