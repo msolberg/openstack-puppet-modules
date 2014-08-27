@@ -248,6 +248,10 @@ The port to use for Stomp.
 
 Boolean to install the stomp plugin.
 
+####`tcp_keepalive`
+
+Boolean to enable TCP connection keepalive for RabbitMQ service.
+
 ####`wipe_db_on_cookie_change`
 
 Boolean to determine if we should DESTROY AND DELETE the RabbitMQ database.
