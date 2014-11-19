@@ -35,6 +35,8 @@
 #    (optional) A hash of extra paramaters for apache::wsgi class.
 #    Defaults to {}
 class horizon::wsgi::apache (
+  $manage_service      = true,
+  $enabled             = true,
   $bind_address        = undef,
   $fqdn                = $::fqdn,
   $servername          = $::fqdn,
@@ -53,6 +55,14 @@ class horizon::wsgi::apache (
 
   include ::horizon::params
   include ::apache
+
+  if $manage_service {
+    if $enabled {
+      $service_ensure = 'running'
+    } else {
+      $service_ensure = 'stopped'
+    }
+  }
 
   if $::osfamily == 'RedHat' {
     class { 'apache::mod::wsgi':

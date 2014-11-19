@@ -7,10 +7,6 @@ describe 'horizon' do
       'fqdn'       => '*' }
   end
 
-  let :pre_condition do
-    'include apache'
-  end
-
   let :fixtures_path do
     File.expand_path(File.join(__FILE__, '..', '..', 'fixtures'))
   end

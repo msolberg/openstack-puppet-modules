@@ -11,7 +11,6 @@ describe 'horizon::wsgi::apache' do
   end
 
   let :pre_condition do
-    "include apache\n" +
     "class { 'horizon': secret_key => 's3cr3t', configure_apache => false }"
   end
 

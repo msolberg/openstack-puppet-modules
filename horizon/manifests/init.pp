@@ -123,6 +123,12 @@
 #  [*configure_apache*]
 #    (optional) Configure Apache for Horizon. (Defaults to true)
 #
+#  [*manage_apache*]
+#    (optional) Start Apache. (Defaults to true)
+#
+#  [*enable_apache*]
+#    (optional) Enable Apache startup after reboot. (Defaults to true)
+#
 #  [*bind_address*]
 #    (optional) Bind address in Apache for Horizon. (Defaults to undef)
 #
@@ -188,6 +194,8 @@ class horizon(
   $help_url                = 'http://openstack.redhat.com/Docs',
   $local_settings_template = 'horizon/local_settings.py.erb',
   $configure_apache        = true,
+  $manage_apache           = true,
+  $enable_apache           = true,
   $bind_address            = undef,
   $servername              = $::fqdn,
   $listen_ssl              = false,
@@ -281,6 +289,8 @@ class horizon(
 
   if $configure_apache {
     class { 'horizon::wsgi::apache':
+      manage_service => $manage_apache,
+      enabled        => $enable_apache,
       bind_address => $bind_address,
       fqdn         => $fqdn,
       servername   => $servername,
