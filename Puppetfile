@@ -40,13 +40,13 @@ mod 'keystone',
   :ref => '05dab114ee62be81da99fe0bc8071c24c2510a31'
 mod 'neutron',
   :git => 'git://github.com/enovance/puppet-neutron.git',
-  :ref => '1e5e1b902964013f7c5c2e7107dcd81ed26db1e5'
+  :ref => '5500e4c0b2bce10ebc91a9685309cf854db2d2dc'
 mod 'nova',
   :git => 'git://github.com/enovance/puppet-nova.git',
   :ref => '2a5c1eac6b34ea29bbd3e28d7ee56839f10d83d9'
 mod 'swift',
   :git => 'git://github.com/enovance/puppet-swift.git',
-  :ref => '499386a89d2b5059445c887ff383655610f3fcb9'
+  :ref => '9a8e28d4ad91b9d638dc2e1e2f4e037ac2831864'
 mod 'tempest',
   :git => 'git://github.com/enovance/puppet-tempest.git',
   :ref => 'f5e87cad5de119bd483006f06efcd22a34d8bdc4'
