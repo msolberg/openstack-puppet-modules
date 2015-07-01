@@ -1,0 +1,10 @@
+{
+  "name": "purpleidea-puppet",
+  "version": "0.0.1",
+  "author": "James Shubin <james@shubin.ca>",
+  "license": "GNU Affero General Public License",
+  "summary": "This is puppet-puppet a puppet module for puppet.",
+  "source": "https://github.com/purpleidea/puppet-puppet",
+  "dependencies": [
+  ]
+}
